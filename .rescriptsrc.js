@@ -16,17 +16,6 @@ const getLessLoader = (test, withModules) => {
               },
             },
       },
-      {
-        loader: 'less-loader',
-        options: {
-          javascriptEnabled: true,
-          modifyVars: {
-            '@primary-color': '#fa8c16',
-            '@component-background': '#e8e8e8',
-          },
-          // modifyVars: darkTheme,
-        },
-      },
     ],
   };
 };
@@ -58,15 +47,6 @@ module.exports = [
       ],
     },
   ],
-  // add less-loader for antd
-  config => {
-    const rule = config.module.rules.find(rule => rule.oneOf);
-
-    rule.oneOf.unshift(getLessLoader(/\.less$/, false));
-    rule.oneOf.unshift(getLessLoader(/\.module\.less$/, true));
-
-    return config;
-  },
   config => {
     // helper function to troubleshoot webpack config issues
     RegExp.prototype.toJSON = RegExp.prototype.toString;
