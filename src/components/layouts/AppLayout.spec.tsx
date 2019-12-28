@@ -1,10 +1,6 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
-import { StoreProvider } from 'easy-peasy';
-import { ConnectedRouter } from 'connected-react-router';
-import { Provider } from 'react-redux';
 import { createMemoryHistory, MemoryHistory } from 'history';
-import { createReduxStore } from 'store';
 import { useTranslation } from 'react-i18next';
 import AppLayout from './AppLayout';
 
@@ -13,17 +9,10 @@ describe('AppLayout component', () => {
   const renderComponent = (path?: string) => {
     history = createMemoryHistory();
     if (path) history.push(path);
-    const store = createReduxStore();
     const app = (
-      <StoreProvider store={store}>
-        <Provider store={store as any}>
-          <ConnectedRouter history={history}>
-            <AppLayout>
-              <p data-tid="hello">Hello World!</p>
-            </AppLayout>
-          </ConnectedRouter>
-        </Provider>
-      </StoreProvider>
+      <AppLayout>
+        <p data-tid="hello">Hello World!</p>
+      </AppLayout>
     );
 
     return render(app);
