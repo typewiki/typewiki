@@ -7,7 +7,7 @@ const Counter = () => {
   useEffect(() => info('Rendering Counter component'), []);
   const { t } = useTranslation();
 
-  return <div></div>;
+  return <div>1111</div>;
 };
 
 export default Counter;
