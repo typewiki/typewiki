@@ -16,14 +16,14 @@ const url = isDev
 
 // install react & redux chrome dev tools
 const installExtensions = async () => {
-  // // eslint-disable-next-line @typescript-eslint/no-var-requires
-  // const installer = require('electron-devtools-installer');
-  // const forceDownload = !!process.env.UPGRADE_EXTENSIONS;
-  // const extensions = ['REACT_DEVELOPER_TOOLS', 'REDUX_DEVTOOLS'];
-  //
-  // return Promise.all(
-  //   extensions.map(name => installer.default(installer[name], forceDownload)),
-  // ).catch(console.log);
+  // eslint-disable-next-line @typescript-eslint/no-var-requires
+  const installer = require('electron-devtools-installer');
+  const forceDownload = !!process.env.UPGRADE_EXTENSIONS;
+  const extensions = ['REACT_DEVELOPER_TOOLS'];
+
+  return Promise.all(
+    extensions.map(name => installer.default(installer[name], forceDownload)),
+  ).catch(console.log);
 };
 
 const createWindow = async () => {
@@ -32,6 +32,7 @@ const createWindow = async () => {
     height: 680,
     webPreferences: {
       nodeIntegration: true,
+      webSecurity: false,
     },
   });
 

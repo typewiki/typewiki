@@ -1,0 +1,7 @@
+@import '~normalize.css/normalize.css';
+@import '~@blueprintjs/core/lib/css/blueprint.css';
+@import "~@blueprintjs/core/lib/scss/variables";
+
+body {
+  background-color: $dark-gray1;
+}

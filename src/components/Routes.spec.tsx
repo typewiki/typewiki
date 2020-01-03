@@ -16,9 +16,9 @@ describe('App container', () => {
     return render(routes);
   };
 
-  it('should render the home page', () => {
+  it('should render the revisions page', () => {
     const { getByTestId } = renderComponent(HOME);
-    expect(getByTestId('me-btn')).toHaveTextContent('home.me-btn');
+    expect(getByTestId('me-btn')).toHaveTextContent('revisions.me-btn');
   });
 
   it('should render the counter page', () => {

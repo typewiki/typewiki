@@ -1,17 +1,17 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
-import Home from './Home';
+import Revisions from './Revisions';
 
-describe('Home component', () => {
+describe('Revisions component', () => {
   const renderComponent = () => {
-    const app = <Home />;
+    const app = <Revisions />;
 
     return render(app);
   };
 
   it('should contain a "Click Me!" button', () => {
     const { getByTestId } = renderComponent();
-    expect(getByTestId('me-btn')).toHaveTextContent('cmps.home.me-btn');
+    expect(getByTestId('me-btn')).toHaveTextContent('cmps.revisions.me-btn');
   });
 
   it('should contain a link to Counter page', () => {
@@ -28,6 +28,6 @@ describe('Home component', () => {
     const { getByTestId } = renderComponent();
     const btn = getByTestId('me-btn');
     fireEvent.click(btn);
-    expect(getByTestId('success')).toHaveTextContent('cmps.home.success-text');
+    expect(getByTestId('success')).toHaveTextContent('cmps.revisions.success-text');
   });
 });

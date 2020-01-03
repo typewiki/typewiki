@@ -14,7 +14,7 @@ const AppLayout: React.FC<Props> = (props: Props) => {
   const setEnglish = () => i18n.changeLanguage('en-US');
   const setSpanish = () => i18n.changeLanguage('es');
 
-  return <>{props.children}</>;
+  return <div className="bp3-dark">{props.children}</div>;
 };
 
 export default AppLayout;
