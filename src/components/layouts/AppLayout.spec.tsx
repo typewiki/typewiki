@@ -72,7 +72,7 @@ describe('AppLayout component', () => {
     expect(history.location.pathname).toEqual('/counter');
   });
 
-  it('should navigate to home page when logo clicked', () => {
+  it('should navigate to revisions page when logo clicked', () => {
     const { getByTestId } = renderComponent('/counter');
     fireEvent.click(getByTestId('logo'));
     expect(history.location.pathname).toEqual('/');

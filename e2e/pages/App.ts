@@ -1,7 +1,7 @@
 import { Selector } from 'testcafe';
 
 class App {
-  navHomeLink: Selector = Selector('[data-tid=nav-home]');
+  navHomeLink: Selector = Selector('[data-tid=nav-revisions]');
   navCounterLink: Selector = Selector('[data-tid=nav-counter]');
 
   clickHomeLink = async (t: TestController) => t.click(this.navHomeLink);

@@ -1,0 +1,13 @@
+@import '~normalize.css/normalize.css';
+@import '~@blueprintjs/core/lib/css/blueprint.css';
+@import '~@blueprintjs/core/lib/scss/variables';
+
+@import '~react-grid-layout/css/styles.css';
+@import '~react-resizable/css/styles.css';
+
+body {
+  background-color: $dark-gray1;
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+}
